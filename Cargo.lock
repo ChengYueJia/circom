@@ -145,6 +145,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "cli"
+version = "2.1.6"
+dependencies = [
+ "ansi_term",
+ "circom",
+ "clap",
+ "compiler",
+ "constraint_generation",
+ "constraint_writers",
+ "dag",
+ "exitcode",
+ "parser",
+ "program_structure",
+ "type_analysis",
+ "wast",
+]
+
+[[package]]
 name = "code_producers"
 version = "2.1.6"
 dependencies = [

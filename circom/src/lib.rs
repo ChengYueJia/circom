@@ -1,14 +1,15 @@
-mod compilation_user;
-mod execution_user;
+pub mod compilation_user;
+pub mod execution_user;
 pub mod input_user;
-mod parser_user;
-mod type_analysis_user;
+pub mod parser_user;
+pub mod type_analysis_user;
+pub mod constants;
 
 use input_user::Input;
 use compilation_user::CompilerConfig;
 use execution_user::ExecutionConfig;
 
-const VERSION: &'static str = env!("CARGO_PKG_VERSION");
+pub const VERSION: &'static str = env!("CARGO_PKG_VERSION");
 
 pub fn circom_compiler(user_input: Input) -> Result<(), ()> {
     let mut program_archive = parser_user::parse_project(&user_input)?;

@@ -1,4 +1,8 @@
+pub mod input_user;
+
 use ansi_term::Colour;
+use crate::input_user::new_input;
+use circom::circom_compiler;
 
 fn main() {
     let result = start();
@@ -11,9 +15,6 @@ fn main() {
     }
 }
 fn start() -> Result<(), ()> {
-    use circom::input_user::Input;
-    use circom::circom_compiler;
-
-    let user_input = Input::new()?;
+    let user_input = new_input()?;
     circom_compiler(user_input)
 }
